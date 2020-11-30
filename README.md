@@ -13,8 +13,10 @@ Context လုပ်လို့ရတဲ့ method တွေက
   - Examples for uses of context:
 
     - 1.Creating new objects:Creating new views,adapters,listeners
-    - TextView tv=new TextView(getContext());
-    - ListAdapter adapter=new SimpleCursorAdapter(getApplicationContext());
+ ``` java
+    TextView tv=new TextView(getContext());
+    ListAdapter adapter=new SimpleCursorAdapter(getApplicationContext());
+    ```
 
 
 * Activity ထဲမှာ view တွေကို dynamically create လုပ်တဲ့အခါမှ context ကိုလိုအပ်တယ်။
