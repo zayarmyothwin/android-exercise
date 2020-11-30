@@ -37,3 +37,9 @@ email.putExtra(Intent.EXTRA_SUBJECT,subject.getText().toString());
 email.putExtra(Intent.EXTRA_TEXT,body.getText().toString());
 startActivity(Intent);
 ```
+
+### Action
+Action ဆိုတာက Intent object ရဲ့ မဖစ်မ‌ေနလုပ်ရ‌ေသာအစိတ်အပိုင်း။ ACTION_VIEW,ACTION_DIAL စတာ‌ေတွ။
+
+### Data
+Intent filter ထဲကို data specification ‌ေတွထည့်တာ 
