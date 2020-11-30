@@ -1,14 +1,13 @@
 ## This Android Exercise file is created on 12pm 30-Nov-2020 by Zayar Myo Thwin.
 
-Every exercise notes are noted in this readmefile.
--Context-
+### Context
 Context ဆိုတာက ကြားခံ application environment နဲ့ global information ကိုချိတ်ဆက်ပေးတဲ့ကြားခံ
 Context လုပ်လို့ရတဲ့ method တွေက
 
 1. getApplicationContext()
-1. getContext()
-1. getBaseContext()
-1. or this(when in the activity class)
+2. getContext()
+3. getBaseContext()
+4. or this(when in the activity class)
 
   - Examples for uses of context:
 
@@ -25,3 +24,16 @@ Context လုပ်လို့ရတဲ့ method တွေက
 * Activity တိုင်းက Context ဖစ်ပီးတော့ View တိုင်းက Context ကိုလိုအပ်တယ်။
 ### Difference between Activity Context and Appliaction Context
 ![Context](context.png)
+* Need of Context:
+  * View တိုင်းဟာ မှန်ကန်တဲ့ resources(eg.the theme,strings etc) ‌ေတွရရှိဖို့အတွက် context ကိုလိုအပ်တယ်။
+
+### Intents and Filters
+Android Intent ဆိုတာလုပ်‌ေဆာင်ရမယ့် operation အတွက်အကျဉ်းချုပ်‌ေဖာ်ပြချက်ဘဲဖစ်တယ်။ဘလိုမျိုးသံုးလို့ရလဲဆိုရင် Activity တစ်ခုကိုစဖို့အတွက် startActivity မှာသုံးလို့ရမယ်။ broadcastIntent , startService(Intent) or bindService(Intent, ServiceConnection, int)  စတဲ့ backgroud service ‌ေတွနဲ့ချိတ်ဆက်တဲ့အခါမှာလဲသုံးလို့ရတယ်။
+* ဉပမာ-Activity တခုရှိတယ် အဲ့ Activity က email client တခုကို email ပို့တဲ့ဟာဆိုပါဆို့    Activity က ACTION_SEND ဆိုတာကို Android Intent resolver ထဲကိုပို့လိုက်မယ်။
+``` java
+Intent email=new Intent(Intent.ACTION_SEND,Uri.parse("mailto:"));
+email.putExtra(Intent.EXTRA_EMAIL,recipients);
+email.putExtra(Intent.EXTRA_SUBJECT,subject.getText().toString());
+email.putExtra(Intent.EXTRA_TEXT,body.getText().toString());
+startActivity(Intent);
+```
