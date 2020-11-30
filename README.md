@@ -4,10 +4,10 @@ Every exercise notes are noted in this readmefile.
 -Context-
 Context ဆိုတာက ကြားခံ application environment နဲ့ global information ကိုချိတ်ဆက်ပေးတဲ့ကြားခံ
 Context လုပ်လို့ရတဲ့ method တွေက
-1.getApplicationContext()
-2.getContext()
-3.getBaseContext()
-4.or this(when in the activity class)
+*1.getApplicationContext()
+*2.getContext()
+*3.getBaseContext()
+*4.or this(when in the activity class)
 Examples for uses of context:
 1.Creating new objects:Creating new views,adapters,listeners
 TextView tv=new TextView(getContext());
