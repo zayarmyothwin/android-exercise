@@ -43,3 +43,25 @@ Action ဆိုတာက Intent object ရဲ့ မဖစ်မ‌ေနလု
 
 ### Data
 Intent filter ထဲကို data specification ‌ေတွထည့်တာ 
+
+## Types of Intents
+Explicit Intent နဲ့ Implicit Intent ဆိုပီးနှစ်မျိုးရှိပါတယ်။
+![Typesofintents](intent.png)
+
+### Explicit Intents
+First Activity က‌ေန Second Activity ကိုသွားတာကို Explicit Intentလို့‌ေခါ်တယ်
+``` java
+//Explicit Intent by specifying its class name
+Intent i=new Intent(FirstActivity.class,SecondActivity.class)
+//starts Target Activity
+startActivity(i);
+```
+### Implicit Intents
+Implicit Intent ကကျ‌ေတာ့ အခြား applications ‌ေတွမှာ component ‌ေတွကို activate လုပ်တဲ့အခါမျိုးမှာသုံးတယ်။
+``` java
+Intent read1=new Intent()'
+read1.setAction(android.content.Intent.ACTION_VIEW);
+read1.setData(ContactsContract.Contact.CONTENT_URI);
+startActivity(read1);
+```
+
