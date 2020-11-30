@@ -16,7 +16,7 @@ Context လုပ်လို့ရတဲ့ method တွေက
  ``` java
     TextView tv=new TextView(getContext());
     ListAdapter adapter=new SimpleCursorAdapter(getApplicationContext());
-    ```
+ ```
 
 
 * Activity ထဲမှာ view တွေကို dynamically create လုပ်တဲ့အခါမှ context ကိုလိုအပ်တယ်။
