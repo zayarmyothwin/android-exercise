@@ -59,7 +59,7 @@ startActivity(i);
 ### Implicit Intents
 Implicit Intent ကကျ‌ေတာ့ အခြား applications ‌ေတွမှာ component ‌ေတွကို activate လုပ်တဲ့အခါမျိုးမှာသုံးတယ်။
 ``` java
-Intent read1=new Intent()'
+Intent read1=new Intent();
 read1.setAction(android.content.Intent.ACTION_VIEW);
 read1.setData(ContactsContract.Contact.CONTENT_URI);
 startActivity(read1);
