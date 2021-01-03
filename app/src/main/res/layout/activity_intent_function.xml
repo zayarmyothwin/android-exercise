@@ -7,12 +7,21 @@
     android:orientation="vertical"
     tools:context=".IntentFunction">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="This is Intent Function"
-        android:layout_gravity="center_horizontal"
-        android:textSize="100dp"
-        />
+ <Button
+     android:id="@+id/btnBrowser"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:text="Load Browser"
+     android:textAllCaps="false"
+     android:onClick="loadBrowser"
+     />
 
+   <Button
+       android:id="@+id/btnCall"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:text="Call Phone"
+       android:onClick="callPhone"
+       android:textAllCaps="false"
+       />
 </LinearLayout>
