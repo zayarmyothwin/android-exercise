@@ -98,3 +98,8 @@ Activity class ထဲမှာဆိုရင် onCreate(),onStart(),onResume()
 * onStop()-activity ကိုလုံးဝမမြင်ရတော့ဘူးဆိုရင်သုံးတဲ့ method။
 * onDestroy()-activity ကိုလုံးဝဖျက်လိုက်တယ်ဆိုရင်ဒီ methodဖစ်တယ်။ phone ရဲ့ task manager ကနေ appliaction ကိုမသုံးတော့ဘဲဖျက်လိုက်တယ်ဆိုရင် onDestroy() method ဘဲဖစ်တယ်။
 * onRestart()-activity ကို stop လုပ်ထားပီးတာကိုမှ ပြန်ပီး restart လုပ်တာဆိုရင်ဒီ method ကအလုပ်လုပ်တယ်။
+
+### Saved Instance State
+တခါတလေမှာ application တခုဟာသုံးနေရင်းနဲ့ screen orientation ကြောင့် onCreate() အဆင့်ကိုပြန်ရောက်သွားတာမျိုးတွေရှိတက်တယ်။အဲ့လို onCreate() အဆင့်ကိုပြန်ရောက်သွားတယ်ဆိုရင် process တွေကအသစ်ကနေပြန်ရောက်သွားမယ်။အဲ့လို onCreate() အဆင့်ကိုပြန်ရောက်သွားတဲ့အခါမျိုးမှာ process တွေကိုအသစ်ကပြန်မရောက်ချင်ဘူးဆိုရင် onCreate() method ထဲမှာ bundle အနေနဲ့ပါတယ် onSaveInstanceState() method ကို override လုပ်ပြင်ပီးရေးထားရမယ်။
+* SaveInstanceState example မှာဆိုရင် app ထဲမှာ နံပါတ်တခုရေးထားတယ် screen ကို tap တချက်နှိပ်လိုက်တာနဲ့နံပါတ်ကပြောင်းသွားမယ် screen orientation ကြောင့် onCreate() method ပြန်ရောက်တဲ့အခါ screen tap ကြောင့် နံပါတ်ပြောင်းတာကိုပါ အသစ် 0 ကနေ ပြန်မပြောင်းအောင် onSaveInstanceState() ကို override လုပ်ထားပီးရေထားတယ်။
+
