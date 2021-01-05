@@ -87,4 +87,14 @@ Android OS filters များကိုအသုံးပြုပီးတေ�
 ```
 ### Activites
 Android မှာ activity ဆိုတာ screen မှာမြင်ရတဲ့ screen တခုကိုဆိုလိုတယ်။activity တခုကို onCreate() ဆိုတဲ့ method နဲ့စတယ်။
+
 ![Activity Life Cycle](activity.jpg)
+
+Activity class ထဲမှာဆိုရင် onCreate(),onStart(),onResume(),etc.. စတဲ့ call back method တွေရှိတယ်။ဒါပေမဲ့ class တခုထဲမှာတော့ call back method တွေ အားလုံးထည့်ဖို့တော့မလိုအပ်ဘူး။ call back method တွေကိုသိထားဖို့တော့လိုအပ်တယ်။
+* onCreate()-activity ပထမဦးဆုံး create လုပ်လိုက်တဲ့အခါမှာသုံးတယ်။
+* onStart()-activity ကိုuser ကမြင်လိုက်ပီဆိုရင်ဒီ method ကအလုပ်လုပ်ပီ။
+* onResume()-User က application ကိုစပီးသုံးလိုက်ပီဆိုရင်ဒီ method ကအလုပ်လုပ်တယ်။
+* onPause()-activity နှစ်ခုရှိမယ်၊အဲ့ထဲမှာမှ ဒုတိယ activity ကနေ back နဲ့ထွက်ပီး ပထမ activity ကို User ကပြန်သုံးနေပီဆိုရင် ဒုတိယ activity မှာ onPause() method ကအလုပ်လုပ်နေမယ်။ onPause() method မှာ user input တွေ code implement တွေကအလုပ်လုပ်မှာမဟုတ်ဘူး။
+* onStop()-activity ကိုလုံးဝမမြင်ရတော့ဘူးဆိုရင်သုံးတဲ့ method။
+* onDestroy()-activity ကိုလုံးဝဖျက်လိုက်တယ်ဆိုရင်ဒီ methodဖစ်တယ်။ phone ရဲ့ task manager ကနေ appliaction ကိုမသုံးတော့ဘဲဖျက်လိုက်တယ်ဆိုရင် onDestroy() method ဘဲဖစ်တယ်။
+* onRestart()-activity ကို stop လုပ်ထားပီးတာကိုမှ ပြန်ပီး restart လုပ်တာဆိုရင်ဒီ method ကအလုပ်လုပ်တယ်။
