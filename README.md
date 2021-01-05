@@ -67,3 +67,24 @@ startActivity(read1);
 ### Function of Intent နဲ့ Custom Browser ဖွင့်တဲ့ app ကို Example 1 မှာရေးထားတယ်
 * Function of Intent ထဲမှာတော့ Intent ကိုအသုံးပြုပီး website တခုဖွင့်တာနဲ့ Phone call တခုခေါ်တာကိုပြပေးထားတယ်
 * Custom Browser မှာတော့ ကိုယ်ပိုင် app မှာ Browser ဖွင့်တဲ့ပုံစံလုပ်ထားတယ် Browser name ရိုက်ထည့်ရတဲ့ text box မှာတော့ http://www.google.com ဘာညာဆိုပီး ပြည့်ပြည့်စုံစုံရိုက်ထည့်ပေးဖို့လိုအပ်တယ်။
+
+### Intent Filters
+Android OS filters များကိုအသုံးပြုပီးတော့ Activites,Servies,Broadcast receivers တွေနဲ့သက်ဆိုင်တဲ့ action,categories,data scheme တွေကိုရေးရတယ်။<intent-filter></intent-filter> element ကိုအသုံးပြုပီးတော့ activies,services,broadcaste receivers တွေနဲ့သက်ဆိုင်တဲ့ action,categories,data scheme တွေအဖစ် android manifest file ထဲမှာသွားပီးရေးထည့်ပေးရတယ်။ Intent-filter ထည့်ရေးထားတဲ့ဉပမာက 
+``` xml
+ <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="http://"/>
+                <data android:scheme="https://"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+
+            </intent-filter>
+        </activity>
+```
+### Activites
+Android မှာ activity ဆိုတာ screen မှာမြင်ရတဲ့ screen တခုကိုဆိုလိုတယ်။activity တခုကို onCreate() ဆိုတဲ့ method နဲ့စတယ်။
+![Activity Life Cycle](activity.jpg)
