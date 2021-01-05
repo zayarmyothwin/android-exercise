@@ -5,22 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".Second">
 
     <Button
-        android:id="@+id/btnSecond"
+        android:id="@+id/btnBack"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Second Activity"
+        android:text="Back to First Activity"
         android:textAllCaps="false"
-        android:onClick="showSecond"
+
         />
-    <Button
-        android:id="@+id/btnBrowser"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Browser"
-        android:onClick="showBrowser"
-        android:textAllCaps="false"/>
 
 </LinearLayout>
