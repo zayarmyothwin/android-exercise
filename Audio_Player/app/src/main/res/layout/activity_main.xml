@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".MainActivity">
+
+    <ImageButton
+        android:src="@drawable/play"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:id="@+id/btn1"
+        android:onClick="playAudio"
+        />
+
+    <ImageButton
+        android:id="@+id/btn2"
+        android:src="@drawable/stop"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        android:layout_marginTop="25dp"
+        android:onClick="stopAudio"
+        />
+
+
+</LinearLayout>

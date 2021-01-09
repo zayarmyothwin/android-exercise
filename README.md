@@ -110,3 +110,23 @@ Service ဆိုတာကတော့ application ကိုမဖွင့်�
 
 #### Android Service Lifecycle
 ![Service Lifecycle](/service.jpg)
+
+* Services မှာ သက်ဆိုင်ရာ callback method တွေရှိတယ်။
+* onStartCommand()
+* onBind()
+* onUnbind()
+* onRebind()
+* onCreate()
+* onDestory()
+
+### onStartCommand() method
+onStartCommand က system ကို service instance ကိုဘလို create လုပ်ရမလဲဆိုတာကိုပြောဖို့ service maintenance state ကို return ပြန်ပေးတယ်။
+* START_STICKY
+* START_NOT_STICKY
+* START_REDELIVER_INTENT
+* toast_every_six_second example က ၆စက္ကန့်တိုင်းမှာ toast စာသားပေါ်အောင်ရေးထားတယ်။
+
+### Bound Service
+* Audio player example မှာ bond service အကြောင်းကိုရေးထားတယ်။
+
+
