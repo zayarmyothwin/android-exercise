@@ -83,7 +83,7 @@ Android OS filters များကိုအသုံးပြုပီးတေ�
                 <category android:name="android.intent.category.LAUNCHER" />
 
             </intent-filter>
-        </activity>
+  </activity>
 ```
 ### Activites
 Android မှာ activity ဆိုတာ screen မှာမြင်ရတဲ့ screen တခုကိုဆိုလိုတယ်။activity တခုကို onCreate() ဆိုတဲ့ method နဲ့စတယ်။
