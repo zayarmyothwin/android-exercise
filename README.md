@@ -129,4 +129,7 @@ onStartCommand က system ကို service instance ကိုဘလို creat
 ### Bound Service
 * Audio player example မှာ bond service အကြောင်းကိုရေးထားတယ်။
 
-
+### Broadcast Receivers
+Broadcast Recievers တခြား applications or system ကိုယ်တိုင်ကပို့တဲ့ broadcast message တွေကို respond ပြန်တဲ့နေရာမှာသုံးတယ်။အဲ့ဒီ့ message တွေကို events or intents တွေလို့လဲခေါ်တယ်။ BroadcastReceiver အလုပ်လုပ်ဖို့အတွက်အောက်က အချက်နှစ်ချက်လိုအပ်တယ်
+* Creating the Broadcast Receiver
+* Registering Broadcast Receiver
