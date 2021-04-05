@@ -133,3 +133,20 @@ onStartCommand က system ကို service instance ကိုဘလို creat
 Broadcast Recievers တခြား applications or system ကိုယ်တိုင်ကပို့တဲ့ broadcast message တွေကို respond ပြန်တဲ့နေရာမှာသုံးတယ်။အဲ့ဒီ့ message တွေကို events or intents တွေလို့လဲခေါ်တယ်။ BroadcastReceiver အလုပ်လုပ်ဖို့အတွက်အောက်က အချက်နှစ်ချက်လိုအပ်တယ်
 * Creating the Broadcast Receiver
 * Registering Broadcast Receiver
+
+### Android - Content Providers
+Content providers component က application တခုကနေပီး တခြားတခုက request လုပ်တဲ့အခါမှာ data တွေကိုထောက်ပံပေးတာ။ Requests တွေကို ContentResolver class ရဲ့ methods တွေကနေပီးတော့ handle လုပ်ပေးတယ်။ Content provider ကနည်းမျိုးစုံကိုသုံးပီးတော့ data တွေကို သိမ်းဆည်းပေးတယ်။ Data တွေကို database, files, network တွေထဲမှာပါသိမ်းဆည်းပေးတယ်။
+
+### AsyncTask
+Async Task ဆိုတာက android ကနေ provide လုပ်ပေးထားတဲ့ abstract class ဘဲဖစ်တယ်။ Async Task က heavytask တွေကို background မှာလုပ်ဆောင်ပေးပီးတော့ UI thread ကိုလဲပေါ့ပေါ့ပါးပါးဖစ်အောင်လုပ်ပေးတယ် အဲ့လိုတွေလုပ်ပေးနိုင်လို့ application ကလဲ ပိုပီး responsive ဖစ်တယ်။ 
+* Android application က single thread ပေါ်မှာ runတယ်။ Single Thread ကြောင့် responseပြန်ဖို့အချိန်အကြာကြီးလိုအပ်တဲ့ task တွေဟာ application ကို non-responsive ဖစ်စေတယ်။ အဲ့လိုဖစ်တာကိုရှောင်ဖို့အတွက် AsyncTask ကိုသုံးရတယ်။
+Android AsyncTask class မှာသုံးတဲ့ basic methods တွေက
+* doInBackground() - background မှာ execute လုပ်မဲ့ code တွေဟာဒီထဲမှာပါမယ်။
+* onPreExecute() - background processing မစတင်မီမှာ execute လုပ်မဲ့ code တွေပါမယ်။
+* onPostExecute() - doInBackground() method process လုပ်တဲ့ပီးသွားတဲ့အခါမှာ execute လုပ်မဲ့ code တွေကိုသုံးတာ။ doInBackground က result တွေကဒီ method ထဲမှာပါမယ်။
+* onProgressUpdate() - doInBackground method က progress update တွေကို ဒီ method ကနေရမယ်။ UI thread ကို update လုပ်ဖို့အတွက်လဲဒီ method ကိုသုံးလို့ရတယ်။
+* onCancled() - user ကနေ task ကို cancel လုပ်လိုက်ရင်ဒီ method ကအလုပ်လုပ်မယ်။
+Andrid AsyncTask မှာသုံးမဲ့ generic types ၃ခုက
+* Params 
+* Progress
+* Result
