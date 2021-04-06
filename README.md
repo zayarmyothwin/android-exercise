@@ -150,3 +150,42 @@ Andrid AsyncTask မှာသုံးမဲ့ generic types ၃ခုက
 * Params 
 * Progress
 * Result
+
+```java
+public class ProcessTask extends AsyncTask<Integer,Integer,String> {
+    @Override
+    protected void onPreExecute() {
+        //The first execution method
+        super.onPreExecute();
+    }
+
+    @Override
+    protected String doInBackground(Integer... integers) {
+        //Background Process
+        return "Completion of execution";
+    }
+
+    @Override
+    protected void onProgressUpdate(Integer... values) {
+        //Upgrade Progress to UI
+        super.onProgressUpdate(values);
+    }
+
+    @Override
+    protected void onPostExecute(String s) {
+        //after execution
+        super.onPostExecute(s);
+    }
+}
+
+```
+
+### Storage
+Android မှာ application data တွေကို options တွေအမျိုးမျိုးနဲ့ထိန်းသိမ်းထားလို့ရတယ်။ ကိုယ်လိုအပ်တဲ့အပေါ်မှာမူတည်ပီးတော့ private အနေနဲ့သိမ်းမလား တခြား applications (user)တွေ access လုပ်လို့ရအောင်သိမ်းမလား၊ data တွေအတွက် space ဘလောက်လိုအပ်မလား ပေါ်တွေကိုမူတည်ပီးတော့ data တွေကို store လုပ်ထားလို့ရတယ်။ Data storage options တွေကတော့-
+* Shared Preferences - Store primitive data in key-value pairs.
+* Internal Storage - Store private data on the device memory.
+* External Storage - Store public data on the shared external storage.
+* SQLite Databases - Store structured data in a private database.
+* Network Connection - Store data on the web with your own network server.
+
+
