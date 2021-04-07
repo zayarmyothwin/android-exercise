@@ -1,6 +1,7 @@
 ## This Android Exercise file is created on 12pm 30-Nov-2020 by Zayar Myo Thwin.
 
 ### Context
+
 Context ဆိုတာက ကြားခံ application environment နဲ့ global information ကိုချိတ်ဆက်ပေးတဲ့ကြားခံ
 Context လုပ်လို့ရတဲ့ method တွေက
 
@@ -9,28 +10,34 @@ Context လုပ်လို့ရတဲ့ method တွေက
 3. getBaseContext()
 4. or this(when in the activity class)
 
-  - Examples for uses of context:
+- Examples for uses of context:
 
-    1. Creating new objects:Creating new views,adapters,listeners
- ``` java
-    TextView tv=new TextView(getContext());
-    ListAdapter adapter=new SimpleCursorAdapter(getApplicationContext());
- ```
+  1. Creating new objects:Creating new views,adapters,listeners
 
+```java
+   TextView tv=new TextView(getContext());
+   ListAdapter adapter=new SimpleCursorAdapter(getApplicationContext());
+```
 
-* Activity ထဲမှာ view တွေကို dynamically create လုပ်တဲ့အခါမှ context ကိုလိုအပ်တယ်။
-ဉပမာ-code ကနေပီးတော့ TextView ကိုဖန်တီးမယ်ဆိုရင် TextView ရဲ့ constructor က context object ကိုယူလိုက်တယ် ဘာလို့လဲဆိုရင် Activity class က Context ရဲ့ subclass ဖစ်‌ေနလို့။
-* Context Object က application ရဲ့ resources တွေနဲ့ တခြား features တွေကိုရအောင်ထောက်ပံပေးတယ်။
-* Activity တိုင်းက Context ဖစ်ပီးတော့ View တိုင်းက Context ကိုလိုအပ်တယ်။
+- Activity ထဲမှာ view တွေကို dynamically create လုပ်တဲ့အခါမှ context ကိုလိုအပ်တယ်။
+  ဉပမာ-code ကနေပီးတော့ TextView ကိုဖန်တီးမယ်ဆိုရင် TextView ရဲ့ constructor က context object ကိုယူလိုက်တယ် ဘာလို့လဲဆိုရင် Activity class က Context ရဲ့ subclass ဖစ်‌ေနလို့။
+- Context Object က application ရဲ့ resources တွေနဲ့ တခြား features တွေကိုရအောင်ထောက်ပံပေးတယ်။
+- Activity တိုင်းက Context ဖစ်ပီးတော့ View တိုင်းက Context ကိုလိုအပ်တယ်။
+
 ### Difference between Activity Context and Appliaction Context
+
 ![Context](context.png)
-* Need of Context:
-  * View တိုင်းဟာ မှန်ကန်တဲ့ resources(eg.the theme,strings etc) ‌ေတွရရှိဖို့အတွက် context ကိုလိုအပ်တယ်။
+
+- Need of Context:
+  - View တိုင်းဟာ မှန်ကန်တဲ့ resources(eg.the theme,strings etc) ‌ေတွရရှိဖို့အတွက် context ကိုလိုအပ်တယ်။
 
 ### Intents and Filters
-Android Intent ဆိုတာလုပ်‌ေဆာင်ရမယ့် operation အတွက်အကျဉ်းချုပ်‌ေဖာ်ပြချက်ဘဲဖစ်တယ်။ဘလိုမျိုးသံုးလို့ရလဲဆိုရင် Activity တစ်ခုကိုစဖို့အတွက် startActivity မှာသုံးလို့ရမယ်။ broadcastIntent , startService(Intent) or bindService(Intent, ServiceConnection, int)  စတဲ့ backgroud service ‌ေတွနဲ့ချိတ်ဆက်တဲ့အခါမှာလဲသုံးလို့ရတယ်။
-* ဉပမာ-Activity တခုရှိတယ် အဲ့ Activity က email client တခုကို email ပို့တဲ့ဟာဆိုပါဆို့    Activity က ACTION_SEND ဆိုတာကို Android Intent resolver ထဲကိုပို့လိုက်မယ်။
-``` java
+
+Android Intent ဆိုတာလုပ်‌ေဆာင်ရမယ့် operation အတွက်အကျဉ်းချုပ်‌ေဖာ်ပြချက်ဘဲဖစ်တယ်။ဘလိုမျိုးသံုးလို့ရလဲဆိုရင် Activity တစ်ခုကိုစဖို့အတွက် startActivity မှာသုံးလို့ရမယ်။ broadcastIntent , startService(Intent) or bindService(Intent, ServiceConnection, int) စတဲ့ backgroud service ‌ေတွနဲ့ချိတ်ဆက်တဲ့အခါမှာလဲသုံးလို့ရတယ်။
+
+- ဉပမာ-Activity တခုရှိတယ် အဲ့ Activity က email client တခုကို email ပို့တဲ့ဟာဆိုပါဆို့ Activity က ACTION_SEND ဆိုတာကို Android Intent resolver ထဲကိုပို့လိုက်မယ်။
+
+```java
 Intent email=new Intent(Intent.ACTION_SEND,Uri.parse("mailto:"));
 email.putExtra(Intent.EXTRA_EMAIL,recipients);
 email.putExtra(Intent.EXTRA_SUBJECT,subject.getText().toString());
@@ -39,38 +46,50 @@ startActivity(Intent);
 ```
 
 ### Action
+
 Action ဆိုတာက Intent object ရဲ့ မဖစ်မ‌ေနလုပ်ရ‌ေသာအစိတ်အပိုင်း။ ACTION_VIEW,ACTION_DIAL စတာ‌ေတွ။
 
 ### Data
-Intent filter ထဲကို data specification ‌ေတွထည့်တာ 
+
+Intent filter ထဲကို data specification ‌ေတွထည့်တာ
 
 ## Types of Intents
+
 Explicit Intent နဲ့ Implicit Intent ဆိုပီးနှစ်မျိုးရှိပါတယ်။
 ![Typesofintents](intent.png)
 
 ### Explicit Intents
+
 First Activity က‌ေန Second Activity ကိုသွားတာကို Explicit Intentလို့‌ေခါ်တယ်
-``` java
+
+```java
 //Explicit Intent by specifying its class name
 Intent i=new Intent(FirstActivity.class,SecondActivity.class)
 //starts Target Activity
 startActivity(i);
 ```
+
 ### Implicit Intents
+
 Implicit Intent ကကျ‌ေတာ့ အခြား applications ‌ေတွမှာ component ‌ေတွကို activate လုပ်တဲ့အခါမျိုးမှာသုံးတယ်။
-``` java
+
+```java
 Intent read1=new Intent();
 read1.setAction(android.content.Intent.ACTION_VIEW);
 read1.setData(ContactsContract.Contact.CONTENT_URI);
 startActivity(read1);
 ```
+
 ### Function of Intent နဲ့ Custom Browser ဖွင့်တဲ့ app ကို Example 1 မှာရေးထားတယ်
-* Function of Intent ထဲမှာတော့ Intent ကိုအသုံးပြုပီး website တခုဖွင့်တာနဲ့ Phone call တခုခေါ်တာကိုပြပေးထားတယ်
-* Custom Browser မှာတော့ ကိုယ်ပိုင် app မှာ Browser ဖွင့်တဲ့ပုံစံလုပ်ထားတယ် Browser name ရိုက်ထည့်ရတဲ့ text box မှာတော့ http://www.google.com ဘာညာဆိုပီး ပြည့်ပြည့်စုံစုံရိုက်ထည့်ပေးဖို့လိုအပ်တယ်။
+
+- Function of Intent ထဲမှာတော့ Intent ကိုအသုံးပြုပီး website တခုဖွင့်တာနဲ့ Phone call တခုခေါ်တာကိုပြပေးထားတယ်
+- Custom Browser မှာတော့ ကိုယ်ပိုင် app မှာ Browser ဖွင့်တဲ့ပုံစံလုပ်ထားတယ် Browser name ရိုက်ထည့်ရတဲ့ text box မှာတော့ http://www.google.com ဘာညာဆိုပီး ပြည့်ပြည့်စုံစုံရိုက်ထည့်ပေးဖို့လိုအပ်တယ်။
 
 ### Intent Filters
-Android OS filters များကိုအသုံးပြုပီးတော့ Activites,Servies,Broadcast receivers တွေနဲ့သက်ဆိုင်တဲ့ action,categories,data scheme တွေကိုရေးရတယ်။<intent-filter></intent-filter> element ကိုအသုံးပြုပီးတော့ activies,services,broadcaste receivers တွေနဲ့သက်ဆိုင်တဲ့ action,categories,data scheme တွေအဖစ် android manifest file ထဲမှာသွားပီးရေးထည့်ပေးရတယ်။ Intent-filter ထည့်ရေးထားတဲ့ဉပမာက 
-``` xml
+
+Android OS filters များကိုအသုံးပြုပီးတော့ Activites,Servies,Broadcast receivers တွေနဲ့သက်ဆိုင်တဲ့ action,categories,data scheme တွေကိုရေးရတယ်။<intent-filter></intent-filter> element ကိုအသုံးပြုပီးတော့ activies,services,broadcaste receivers တွေနဲ့သက်ဆိုင်တဲ့ action,categories,data scheme တွေအဖစ် android manifest file ထဲမှာသွားပီးရေးထည့်ပေးရတယ်။ Intent-filter ထည့်ရေးထားတဲ့ဉပမာက
+
+```xml
  <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW"/>
@@ -85,71 +104,87 @@ Android OS filters များကိုအသုံးပြုပီးတေ�
             </intent-filter>
   </activity>
 ```
+
 ### Activites
+
 Android မှာ activity ဆိုတာ screen မှာမြင်ရတဲ့ screen တခုကိုဆိုလိုတယ်။activity တခုကို onCreate() ဆိုတဲ့ method နဲ့စတယ်။
 
 ![Activity Life Cycle](activity.jpg)
 
 Activity class ထဲမှာဆိုရင် onCreate(),onStart(),onResume(),etc.. စတဲ့ call back method တွေရှိတယ်။ဒါပေမဲ့ class တခုထဲမှာတော့ call back method တွေ အားလုံးထည့်ဖို့တော့မလိုအပ်ဘူး။ call back method တွေကိုသိထားဖို့တော့လိုအပ်တယ်။
-* onCreate()-activity ပထမဦးဆုံး create လုပ်လိုက်တဲ့အခါမှာသုံးတယ်။
-* onStart()-activity ကိုuser ကမြင်လိုက်ပီဆိုရင်ဒီ method ကအလုပ်လုပ်ပီ။
-* onResume()-User က application ကိုစပီးသုံးလိုက်ပီဆိုရင်ဒီ method ကအလုပ်လုပ်တယ်။
-* onPause()-activity နှစ်ခုရှိမယ်၊အဲ့ထဲမှာမှ ဒုတိယ activity ကနေ back နဲ့ထွက်ပီး ပထမ activity ကို User ကပြန်သုံးနေပီဆိုရင် ဒုတိယ activity မှာ onPause() method ကအလုပ်လုပ်နေမယ်။ onPause() method မှာ user input တွေ code implement တွေကအလုပ်လုပ်မှာမဟုတ်ဘူး။
-* onStop()-activity ကိုလုံးဝမမြင်ရတော့ဘူးဆိုရင်သုံးတဲ့ method။
-* onDestroy()-activity ကိုလုံးဝဖျက်လိုက်တယ်ဆိုရင်ဒီ methodဖစ်တယ်။ phone ရဲ့ task manager ကနေ appliaction ကိုမသုံးတော့ဘဲဖျက်လိုက်တယ်ဆိုရင် onDestroy() method ဘဲဖစ်တယ်။
-* onRestart()-activity ကို stop လုပ်ထားပီးတာကိုမှ ပြန်ပီး restart လုပ်တာဆိုရင်ဒီ method ကအလုပ်လုပ်တယ်။
+
+- onCreate()-activity ပထမဦးဆုံး create လုပ်လိုက်တဲ့အခါမှာသုံးတယ်။
+- onStart()-activity ကိုuser ကမြင်လိုက်ပီဆိုရင်ဒီ method ကအလုပ်လုပ်ပီ။
+- onResume()-User က application ကိုစပီးသုံးလိုက်ပီဆိုရင်ဒီ method ကအလုပ်လုပ်တယ်။
+- onPause()-activity နှစ်ခုရှိမယ်၊အဲ့ထဲမှာမှ ဒုတိယ activity ကနေ back နဲ့ထွက်ပီး ပထမ activity ကို User ကပြန်သုံးနေပီဆိုရင် ဒုတိယ activity မှာ onPause() method ကအလုပ်လုပ်နေမယ်။ onPause() method မှာ user input တွေ code implement တွေကအလုပ်လုပ်မှာမဟုတ်ဘူး။
+- onStop()-activity ကိုလုံးဝမမြင်ရတော့ဘူးဆိုရင်သုံးတဲ့ method။
+- onDestroy()-activity ကိုလုံးဝဖျက်လိုက်တယ်ဆိုရင်ဒီ methodဖစ်တယ်။ phone ရဲ့ task manager ကနေ appliaction ကိုမသုံးတော့ဘဲဖျက်လိုက်တယ်ဆိုရင် onDestroy() method ဘဲဖစ်တယ်။
+- onRestart()-activity ကို stop လုပ်ထားပီးတာကိုမှ ပြန်ပီး restart လုပ်တာဆိုရင်ဒီ method ကအလုပ်လုပ်တယ်။
 
 ### Saved Instance State
+
 တခါတလေမှာ application တခုဟာသုံးနေရင်းနဲ့ screen orientation ကြောင့် onCreate() အဆင့်ကိုပြန်ရောက်သွားတာမျိုးတွေရှိတက်တယ်။အဲ့လို onCreate() အဆင့်ကိုပြန်ရောက်သွားတယ်ဆိုရင် process တွေကအသစ်ကနေပြန်ရောက်သွားမယ်။အဲ့လို onCreate() အဆင့်ကိုပြန်ရောက်သွားတဲ့အခါမျိုးမှာ process တွေကိုအသစ်ကပြန်မရောက်ချင်ဘူးဆိုရင် onCreate() method ထဲမှာ bundle အနေနဲ့ပါတယ် onSaveInstanceState() method ကို override လုပ်ပြင်ပီးရေးထားရမယ်။
-* SaveInstanceState example မှာဆိုရင် app ထဲမှာ နံပါတ်တခုရေးထားတယ် screen ကို tap တချက်နှိပ်လိုက်တာနဲ့နံပါတ်ကပြောင်းသွားမယ် screen orientation ကြောင့် onCreate() method ပြန်ရောက်တဲ့အခါ screen tap ကြောင့် နံပါတ်ပြောင်းတာကိုပါ အသစ် 0 ကနေ ပြန်မပြောင်းအောင် onSaveInstanceState() ကို override လုပ်ထားပီးရေထားတယ်။
+
+- SaveInstanceState example မှာဆိုရင် app ထဲမှာ နံပါတ်တခုရေးထားတယ် screen ကို tap တချက်နှိပ်လိုက်တာနဲ့နံပါတ်ကပြောင်းသွားမယ် screen orientation ကြောင့် onCreate() method ပြန်ရောက်တဲ့အခါ screen tap ကြောင့် နံပါတ်ပြောင်းတာကိုပါ အသစ် 0 ကနေ ပြန်မပြောင်းအောင် onSaveInstanceState() ကို override လုပ်ထားပီးရေထားတယ်။
 
 ### Services
+
 Service ဆိုတာကတော့ application ကိုမဖွင့်ဘဲနဲ့ background မှာ run နေနိုင်အောင်လုပ်တဲ့ component။Application destoryed ဖစ်သွားရင်တော့ background မှာ run နေနိုင်သေးတယ်။ Services မှာ Stated နှင့် Bound ဆိုပီး state ၂ခုရှိတယ်။
-* Started-application activity တခုက startService() ဆိုတဲ့ method နဲ့စဖွင့်လိုက်မယ်ဆိုရင် Service က start ဆိုတဲ့အဆင့်မှာရောက်နေမယ်။Service က start ဖစ်သွားမယ်ဆိုရင် application destoryed ဖစ်သွားရင်တော့ backgroud မှာ run နေနိုင်မယ်။
-* Bound-bindService() ထဲမှာ application component ကို binds ထားလိုက်ဆိုရင် Service က Bound အဆင့်ကိုရောက်သွားမယ်။Bound Service က background မှာ run ပီး send request တွေ get result တွေနဲ့ တခြား process တွေကိုလုပ်ပေးနိုင်တယ်။
+
+- Started-application activity တခုက startService() ဆိုတဲ့ method နဲ့စဖွင့်လိုက်မယ်ဆိုရင် Service က start ဆိုတဲ့အဆင့်မှာရောက်နေမယ်။Service က start ဖစ်သွားမယ်ဆိုရင် application destoryed ဖစ်သွားရင်တော့ backgroud မှာ run နေနိုင်မယ်။
+- Bound-bindService() ထဲမှာ application component ကို binds ထားလိုက်ဆိုရင် Service က Bound အဆင့်ကိုရောက်သွားမယ်။Bound Service က background မှာ run ပီး send request တွေ get result တွေနဲ့ တခြား process တွေကိုလုပ်ပေးနိုင်တယ်။
 
 #### Android Service Lifecycle
+
 ![Service Lifecycle](/service.jpg)
 
-* Services မှာ သက်ဆိုင်ရာ callback method တွေရှိတယ်။
-* onStartCommand()
-* onBind()
-* onUnbind()
-* onRebind()
-* onCreate()
-* onDestory()
+- Services မှာ သက်ဆိုင်ရာ callback method တွေရှိတယ်။
+- onStartCommand()
+- onBind()
+- onUnbind()
+- onRebind()
+- onCreate()
+- onDestory()
 
 ### onStartCommand() method
+
 onStartCommand က system ကို service instance ကိုဘလို create လုပ်ရမလဲဆိုတာကိုပြောဖို့ service maintenance state ကို return ပြန်ပေးတယ်။
-* START_STICKY
-* START_NOT_STICKY
-* START_REDELIVER_INTENT
-* toast_every_six_second example က ၆စက္ကန့်တိုင်းမှာ toast စာသားပေါ်အောင်ရေးထားတယ်။
+
+- START_STICKY
+- START_NOT_STICKY
+- START_REDELIVER_INTENT
+- toast_every_six_second example က ၆စက္ကန့်တိုင်းမှာ toast စာသားပေါ်အောင်ရေးထားတယ်။
 
 ### Bound Service
-* Audio player example မှာ bond service အကြောင်းကိုရေးထားတယ်။
+
+- Audio player example မှာ bond service အကြောင်းကိုရေးထားတယ်။
 
 ### Broadcast Receivers
+
 Broadcast Recievers တခြား applications or system ကိုယ်တိုင်ကပို့တဲ့ broadcast message တွေကို respond ပြန်တဲ့နေရာမှာသုံးတယ်။အဲ့ဒီ့ message တွေကို events or intents တွေလို့လဲခေါ်တယ်။ BroadcastReceiver အလုပ်လုပ်ဖို့အတွက်အောက်က အချက်နှစ်ချက်လိုအပ်တယ်
-* Creating the Broadcast Receiver
-* Registering Broadcast Receiver
+
+- Creating the Broadcast Receiver
+- Registering Broadcast Receiver
 
 ### Android - Content Providers
+
 Content providers component က application တခုကနေပီး တခြားတခုက request လုပ်တဲ့အခါမှာ data တွေကိုထောက်ပံပေးတာ။ Requests တွေကို ContentResolver class ရဲ့ methods တွေကနေပီးတော့ handle လုပ်ပေးတယ်။ Content provider ကနည်းမျိုးစုံကိုသုံးပီးတော့ data တွေကို သိမ်းဆည်းပေးတယ်။ Data တွေကို database, files, network တွေထဲမှာပါသိမ်းဆည်းပေးတယ်။
 
 ### AsyncTask
-Async Task ဆိုတာက android ကနေ provide လုပ်ပေးထားတဲ့ abstract class ဘဲဖစ်တယ်။ Async Task က heavytask တွေကို background မှာလုပ်ဆောင်ပေးပီးတော့ UI thread ကိုလဲပေါ့ပေါ့ပါးပါးဖစ်အောင်လုပ်ပေးတယ် အဲ့လိုတွေလုပ်ပေးနိုင်လို့ application ကလဲ ပိုပီး responsive ဖစ်တယ်။ 
-* Android application က single thread ပေါ်မှာ runတယ်။ Single Thread ကြောင့် responseပြန်ဖို့အချိန်အကြာကြီးလိုအပ်တဲ့ task တွေဟာ application ကို non-responsive ဖစ်စေတယ်။ အဲ့လိုဖစ်တာကိုရှောင်ဖို့အတွက် AsyncTask ကိုသုံးရတယ်။
-Android AsyncTask class မှာသုံးတဲ့ basic methods တွေက
-* doInBackground() - background မှာ execute လုပ်မဲ့ code တွေဟာဒီထဲမှာပါမယ်။
-* onPreExecute() - background processing မစတင်မီမှာ execute လုပ်မဲ့ code တွေပါမယ်။
-* onPostExecute() - doInBackground() method process လုပ်တဲ့ပီးသွားတဲ့အခါမှာ execute လုပ်မဲ့ code တွေကိုသုံးတာ။ doInBackground က result တွေကဒီ method ထဲမှာပါမယ်။
-* onProgressUpdate() - doInBackground method က progress update တွေကို ဒီ method ကနေရမယ်။ UI thread ကို update လုပ်ဖို့အတွက်လဲဒီ method ကိုသုံးလို့ရတယ်။
-* onCancled() - user ကနေ task ကို cancel လုပ်လိုက်ရင်ဒီ method ကအလုပ်လုပ်မယ်။
-Andrid AsyncTask မှာသုံးမဲ့ generic types ၃ခုက
-* Params 
-* Progress
-* Result
+
+Async Task ဆိုတာက android ကနေ provide လုပ်ပေးထားတဲ့ abstract class ဘဲဖစ်တယ်။ Async Task က heavytask တွေကို background မှာလုပ်ဆောင်ပေးပီးတော့ UI thread ကိုလဲပေါ့ပေါ့ပါးပါးဖစ်အောင်လုပ်ပေးတယ် အဲ့လိုတွေလုပ်ပေးနိုင်လို့ application ကလဲ ပိုပီး responsive ဖစ်တယ်။
+
+- Android application က single thread ပေါ်မှာ runတယ်။ Single Thread ကြောင့် responseပြန်ဖို့အချိန်အကြာကြီးလိုအပ်တဲ့ task တွေဟာ application ကို non-responsive ဖစ်စေတယ်။ အဲ့လိုဖစ်တာကိုရှောင်ဖို့အတွက် AsyncTask ကိုသုံးရတယ်။
+  Android AsyncTask class မှာသုံးတဲ့ basic methods တွေက
+- doInBackground() - background မှာ execute လုပ်မဲ့ code တွေဟာဒီထဲမှာပါမယ်။
+- onPreExecute() - background processing မစတင်မီမှာ execute လုပ်မဲ့ code တွေပါမယ်။
+- onPostExecute() - doInBackground() method process လုပ်တဲ့ပီးသွားတဲ့အခါမှာ execute လုပ်မဲ့ code တွေကိုသုံးတာ။ doInBackground က result တွေကဒီ method ထဲမှာပါမယ်။
+- onProgressUpdate() - doInBackground method က progress update တွေကို ဒီ method ကနေရမယ်။ UI thread ကို update လုပ်ဖို့အတွက်လဲဒီ method ကိုသုံးလို့ရတယ်။
+- onCancled() - user ကနေ task ကို cancel လုပ်လိုက်ရင်ဒီ method ကအလုပ်လုပ်မယ်။
+  Andrid AsyncTask မှာသုံးမဲ့ generic types ၃ခုက
+- Params
+- Progress
+- Result
 
 ```java
 public class ProcessTask extends AsyncTask<Integer,Integer,String> {
@@ -181,11 +216,107 @@ public class ProcessTask extends AsyncTask<Integer,Integer,String> {
 ```
 
 ### Storage
+
 Android မှာ application data တွေကို options တွေအမျိုးမျိုးနဲ့ထိန်းသိမ်းထားလို့ရတယ်။ ကိုယ်လိုအပ်တဲ့အပေါ်မှာမူတည်ပီးတော့ private အနေနဲ့သိမ်းမလား တခြား applications (user)တွေ access လုပ်လို့ရအောင်သိမ်းမလား၊ data တွေအတွက် space ဘလောက်လိုအပ်မလား ပေါ်တွေကိုမူတည်ပီးတော့ data တွေကို store လုပ်ထားလို့ရတယ်။ Data storage options တွေကတော့-
-* Shared Preferences - Store primitive data in key-value pairs.
-* Internal Storage - Store private data on the device memory.
-* External Storage - Store public data on the shared external storage.
-* SQLite Databases - Store structured data in a private database.
-* Network Connection - Store data on the web with your own network server.
 
+- Shared Preferences - Store primitive data in key-value pairs.
+- Internal Storage - Store private data on the device memory.
+- External Storage - Store public data on the shared external storage.
+- SQLite Databases - Store structured data in a private database.
+- Network Connection - Store data on the web with your own network server.
 
+#### Shared Preferences
+
+Shared Preferences class တွေက primitive data types ရဲ့ key-value pairs တွေကို save လုပ်ဖို့နဲ့ retrieve လုပ်ဖို့အတွက် general framework ကိုထောက်ပံပေးတယ်။ Primitive data တွေဖစ်တဲ့ booleans, floats, ints, longs, and string စတာတွေကို Sharedpreferences ကို အသုံးပြုပီးတော့ save မှတ်လို့ရတယ်။ Applications မှာ SharedPreferences object ကိုရဖို့အတွက်ဒီ methods နှစ်ခုထဲက တခုကိုသုံးရတယ်။
+
+- getSharedPreferences - name နဲ့ identified လုပ်ထားတဲ့ multiple preferences files တွေကိုလိုချင်ရင်သုံးရတယ်
+- getPreferences - Activity အတွက် preferences file တခုထဲကိုဘဲလိုချင်တယ်ဆိုရင်သုံးရတယ်။
+  To write values:
+- Call edit() to get a SharedPreferences.Editor.
+- Add Values with mmethods such as putBoolean() and putString().
+- Commit the newe values with commit().
+  To read values, use SharedPreferences methods such as getBoolean() and getString().
+
+### Internal Storage
+
+Device ရဲ့ internal storage ထဲမှာ files တွေကိုတိုက်ရိုက်သိမ်းထားလို့ရတယ်။ Default အနေနဲ့ internal storage ထဲမှာသိမ်းထားတဲ့ file တွေဟာကိုယ့် application အတွက်ဘဲ private ဖစ်ပီးတော့ တခြား applications(or users) တွေကနေပီး access လုပ်လို့မရဘူး။ တကယ်လို့ user ကနေပီး application ကို uninstall လုပ်လိုက်မယ်ဆိုရင် internal storage ထဲမှာသိမ်းထားတဲ့ file တွေကလဲပျက်သွားမယ်။
+
+#### To create and write a private file to the internal storage
+
+Call openFileOutput() with the name of the file and the operating mode. This returns a FileOutputStream.
+
+- Write to the file with write().
+- Close the stream with close().
+  for example-
+
+```java
+String FILENAME="hello_file";
+String string="Hello World!";
+FileOutputStream fos=openFileOutput(FILENAME, Context.MODE_PRIVATE);
+fos.write(string.getBytes());
+fos.close();
+```
+
+#### To read a file from internal storage
+
+Call openFileInput() and pass it the name of the file to read. This returns a FileInputStream.
+
+- Read bytes from the fille with read().
+- Then close the stream with close().
+
+```java
+FileInputStream fin=openFileInput(file);
+int c;
+String temp="";
+while((c=fin.read())!=-1){
+  temp=temp+Character.toString((char)c);
+}
+fin.close();
+```
+
+- MOODE_PRIVATE က file ကို create လုပ်ပီးတော့ application အတွက်ဘဲ private လုပ်ပေးတယ်။ တခြား modes တွေက MODE_APPEND, MODE_WORLD, MODE_WORLD_READABLE, MODE_WORLD_WRITEABLE.
+
+#### Saving cache files
+
+Some data တွေကို သိမ်းဆည်းတာထပ် cache လုပ်မယ်ဆိုရင် getCacheDir() ကိုသုံးပီးတော့ application အတွက် cache files တွေကိုသိမ်းမဲ့ internal directory ကိုညွှန်ပြပေးရမယ်။ တခြားအသုံးဝင်တဲ့ methods တွေက
+
+- getFilesDir() - Gets the absolute path to the filesystem directory where your internal files are saved.
+- getDir() - Creates(or opens an existing) directory within your internal storage space.
+- deleteFile() - Deletes a file saved on the internal storage.
+- fileList() - Returns an array of files currently saved by your application.
+
+### External Storage
+
+Android-compatible device တွေမှာ file တွေကို save ဖို့အတွက် shared "external storage" ကိုထောက်ပံပေးထားတယ်။ အဲ့ဒါဟာ removeable storage media(such as an SD card) သို့ an internal(non-removable) storage ဖစ်နိုင်တယ်။ External storage ထဲမှာ save ထားတဲ့ file တွေဟာ world-readable ဖစ်ပီးတော့ကွန်ပျူတာမှာ USB mass storage enable လုပ်ပီးချိတ်လိုက်မယ်ဆိုရင် user ကနေ modify လုပ်လို့ရတယ်။
+
+- Caution: External storage can become unavailable if the user mounts the external storage on a computer or removes the media, and there's no security enforced upon files you save to the external storage. All applications can read and write files placed on the external storage and the user can remove them.
+
+#### Getting access to external storage
+
+External storage မှာ files တွေကို read write လုပ်ဖို့အတွက် app ထဲမှာ READ_EXTERNAL_STORAGE or WRITE_EXTERNAL_STORAGE system permissions တွေလိုအပ်တယ်။ For example -
+
+```jav
+<manifest>
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+</manifest>
+```
+
+#### Checkig media availabilty
+
+External storage နဲ့ working မလုပ်ခင်မှာ media available ဖစ်မဖစ် getExternalStorageState() ကိုခေါ်ပီးစစ်ရမယ်။ Media မှာကွန်ပျူတာနဲ့ချိတ်ဆက်ထားတာမျိုး, read-only ဘဲရတာမျိုး, တခြား state တွေအနေနဲ့လဲရှိနေနိုင်တယ်။ media availability ကို check ဖို့အတွက် example
+
+```java
+code here
+```
+
+#### Method to get Album Storage directory via external storage
+
+```java
+code here
+```
+
+### Method to access application directory under /Android/component_name/data
+
+```java
+code here
+```
