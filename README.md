@@ -306,17 +306,67 @@ External storage မှာ files တွေကို read write လုပ်ဖ�
 External storage နဲ့ working မလုပ်ခင်မှာ media available ဖစ်မဖစ် getExternalStorageState() ကိုခေါ်ပီးစစ်ရမယ်။ Media မှာကွန်ပျူတာနဲ့ချိတ်ဆက်ထားတာမျိုး, read-only ဘဲရတာမျိုး, တခြား state တွေအနေနဲ့လဲရှိနေနိုင်တယ်။ media availability ကို check ဖို့အတွက် example
 
 ```java
-code here
+//code here
 ```
 
 #### Method to get Album Storage directory via external storage
 
 ```java
-code here
+//code here
 ```
 
 ### Method to access application directory under /Android/component_name/data
 
 ```java
-code here
+//code here
 ```
+
+### SQLite Database
+
+Android မှာ SQLite database ကိုအပြည့်အဝထောက်ပံပေးထားတယ်။ Create လုပ်လိုက်တဲ့ database တွေကို application ရဲ့ class တိုင်းကနေ by name နဲ့ access လုပ်လို့ရမယ်။ ဒါပေမဲ့ application အပြင်ဘက်ကနေတော့ access လုပ်လို့ရမှာမဟုတ်ဘူး။ SQLite Database ကို create လုပ်ဖို့အတွက် recommend method ကတော့ SQLiteOpenHelper ရဲ့ subclass ကို create လုပ် onCreate() method ကို overide လုပ်, onCreate() method ထဲမှာ database ထဲမှာ table ဆောက်ဖို့အတွက် command ကို create လုပ်လို့ရမယ်။ Example :
+
+```java
+//code here
+```
+
+#### Select Data with database object
+
+```java
+//code here
+```
+
+#### Insert Data to database object
+
+```java
+//code here
+```
+
+#### Null Column Hack in Insert Operation
+
+တခါတရံမှာ Empty row ကို insert လုပ်ဖို့လိုအပ်လာလိမ့်မယ် အဲ့လိုထည့်လိုက်ရင် ContentValues ထဲမှာ no content value ဖစ်လိမ့်မယ် အဲ့လိုအခါဆိုရင် nullColumnHack ကိုအသုံးပြုရမယ်။ For example - student table(id,name) ထဲကို empty row တခုထည့်မယ်ဆိုပါဆို့ id ကတော့ auto generated ဖစ်ပီး name က null ဖစ်နေမယ်။ အဲ့ဒါအတွက်
+
+```java
+ContentValues cv=new ContentValues();
+values.put("keyword", "value");
+db insert(DICTIONARY_TABLE_NAME, "keydef", cv);
+```
+
+#### Update Data to database with database object
+
+```java
+//code here
+```
+
+#### Delete Data from database with database object
+
+```java
+//code here
+```
+
+#### Process database low level query
+
+```java
+//code here
+```
+
+### Network Connection
