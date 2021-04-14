@@ -231,11 +231,25 @@ Shared Preferences class တွေက primitive data types ရဲ့ key-value p
 
 - getSharedPreferences - name နဲ့ identified လုပ်ထားတဲ့ multiple preferences files တွေကိုလိုချင်ရင်သုံးရတယ်
 - getPreferences - Activity အတွက် preferences file တခုထဲကိုဘဲလိုချင်တယ်ဆိုရင်သုံးရတယ်။
-  To write values:
+##### To write values:
 - Call edit() to get a SharedPreferences.Editor.
 - Add Values with mmethods such as putBoolean() and putString().
 - Commit the newe values with commit().
   To read values, use SharedPreferences methods such as getBoolean() and getString().
+  ##### Getting Boolean value from shared preference
+  ```java
+  final String PREFS_NAME="MyPrefsFile";
+  SharedPreferences settings=getSharedPreferences(PREFS_NAME,0);
+  boolean silent=settings.getBoolean("silentMode",false);
+  setSilent(silent)
+  ```
+  ##### Setting Boolean value to shared preference
+  ```java
+  SharedPreferences settings=getSharedPreferences(PREFS_NAME,0);
+  SharedPreferences.Editor editor=settings.edit();
+  editor.putBoolean("silentMode",true);
+  editor.commit();
+  ```
 
 ### Internal Storage
 
