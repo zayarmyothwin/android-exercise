@@ -453,3 +453,8 @@ Android application ထဲမှာ network operations တွေလုပ်မ�
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 ```
+#### Design Secure Network Communication
+Application ထဲကို networking functionality တွေမထည့်ခင်မှာ data တွေ information တွေကို network ပေါ် transmit လုပ်တဲ့အခါ safe ဖစ်နေအောင်လုပ်ထားရမယ်။အဲ့လိုလုပ်ဖို့ဆိုရင် အောက်က networking security တွေကိုသိထားရမယ်
+* network ပေါ်မှာ transmit လုပ်မဲ့ sensitive ဖစ်တဲ့ data တွေနဲ့ personal user data တွေရဲ့ ပမာဏကို minimize လုပ်ထားရမယ်
+* SSL ပေါ်ကနေဘဲ app ကနေ network traffic တွေကိုပို့ရမယ်
+* Consider creating a network security configuration, which allows your app to trust custom CAs or restrict the set of system CAs that it trusts for secure communication.
