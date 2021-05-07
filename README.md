@@ -320,19 +320,46 @@ External storage မှာ files တွေကို read write လုပ်ဖ�
 External storage နဲ့ working မလုပ်ခင်မှာ media available ဖစ်မဖစ် getExternalStorageState() ကိုခေါ်ပီးစစ်ရမယ်။ Media မှာကွန်ပျူတာနဲ့ချိတ်ဆက်ထားတာမျိုး, read-only ဘဲရတာမျိုး, တခြား state တွေအနေနဲ့လဲရှိနေနိုင်တယ်။ media availability ကို check ဖို့အတွက် example
 
 ```java
-//code here
+ public boolean isExternalStorageWritable(){
+        String state=Environment.getExternalStorageState();
+        if(Environment.MEDIA_MOUNTED.equals(state)){
+            return true;
+        }
+        return false;
+    }
+    /* Checks if external storage is available to at least read */
+    public boolean isExternalStorageReadable(){
+        String state=Environment.getExternalStorageState();
+        if(Environment.MEDIA_MOUNTED.equals(state)){
+            return true;
+        }
+        return false;
+    }
 ```
 
 #### Method to get Album Storage directory via external storage
 
 ```java
-//code here
+  public File getAlbumStorageDir(String albumName){
+        //Get the directory for the user's public pictures directory.
+        File file=new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),albumName);
+        if(!file.mkdirs()){
+            Log.e(LOG_TAG,"Directory not created");
+        }
+        return file;
+    }
 ```
 
 ### Method to access application directory under /Android/component_name/data
 
 ```java
-//code here
+  public File getAppStorageDir(){
+        File file=new File(android.os.Environment.getExternalStorageDirectory().getAbsolutePath()+"/Android/data/mm.zayar.myapplication/");
+        if(!file.mkdirs()){
+            Log.e(LOG_TAG,"Directory not created.");
+        }
+        return file;
+    }
 ```
 
 ### SQLite Database
