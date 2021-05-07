@@ -30,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void loadSqlite(View view) {
+        Intent intent=new Intent(this,SqliteActivity.class);
+        startActivity(intent);
     }
 
     public void loadHttp(View view) {
