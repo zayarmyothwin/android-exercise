@@ -367,19 +367,47 @@ External storage နဲ့ working မလုပ်ခင်မှာ media avail
 Android မှာ SQLite database ကိုအပြည့်အဝထောက်ပံပေးထားတယ်။ Create လုပ်လိုက်တဲ့ database တွေကို application ရဲ့ class တိုင်းကနေ by name နဲ့ access လုပ်လို့ရမယ်။ ဒါပေမဲ့ application အပြင်ဘက်ကနေတော့ access လုပ်လို့ရမှာမဟုတ်ဘူး။ SQLite Database ကို create လုပ်ဖို့အတွက် recommend method ကတော့ SQLiteOpenHelper ရဲ့ subclass ကို create လုပ် onCreate() method ကို overide လုပ်, onCreate() method ထဲမှာ database ထဲမှာ table ဆောက်ဖို့အတွက် command ကို create လုပ်လို့ရမယ်။ Example :
 
 ```java
-//code here
+public class DataOpenHelper extends SQLiteOpenHelper{
+        private static final String DATABASE_NAME="mydb";
+        private static final int DATABASE_VERSION=2;
+        private static final String DATA_TABLE_NAME="data";
+        private static final String DATA_TABLE_CREATE="CREATE TABLE "+DATA_TABLE_NAME+" ("+"id INTEGER PRIMARY KEY AUTOINCREMENT,value TEXT);";
+
+        DataOpenHelper(Context context){
+            super(context,DATABASE_NAME,null,DATABASE_VERSION);
+
+        }
+        @Override
+        public void onCreate(SQLiteDatabase db) {
+            db.execSQL(DATA_TABLE_CREATE);
+        }
+
 ```
 
 #### Select Data with database object
 
 ```java
-//code here
+SQLiteDatabase db=this.getReadableDatabase();
+            String ret="";
+            Cursor cursor=db.query(DATA_TABLE_NAME,new String[]{"value"},null,null,null,null,null,null);
+            if(cursor.moveToFirst()){
+                do{
+                    ret+=cursor.getString(0)+"\n";
+
+                }while (cursor.moveToNext());
+            }
 ```
 
 #### Insert Data to database object
 
 ```java
-//code here
+ SQLiteDatabase db=this.getWritableDatabase();
+            ContentValues values=new ContentValues();
+            values.put("value",text);
+            //Inserting Row
+            db.insert(DATA_TABLE_NAME,null,values);
+            //2nd argument is String containing nullColumnHack
+            db.close(); //Closing database connection
 ```
 
 #### Null Column Hack in Insert Operation
@@ -395,19 +423,33 @@ db insert(DICTIONARY_TABLE_NAME, "keydef", cv);
 #### Update Data to database with database object
 
 ```java
-//code here
+            SQLiteDatabase db=this.getWritableDatabase();
+            ContentValues values=new ContentValues();
+            values.put("value",text);
+            //add more column
+            db.update(DATA_TABLE_NAME,values,"id=?",new String[]{"1"});
+            db.close();
 ```
 
 #### Delete Data from database with database object
 
 ```java
-//code here
+            SQLiteDatabase db=this.getWritableDatabase();
+            db.delete(DATA_TABLE_NAME,"value=?",new String[]{text});
+            db.close();
 ```
 
 #### Process database low level query
 
 ```java
-//code here
+SQLiteDatabase db=this.getWritableDatabase();
+Cursor cursor=db.rawQuery("SELECT * FROM "+DATA_TABLE_NAME);
+db.execSQL("DELETE FROM "+DATA_TABLE_NAME+" WHERE id=?",String[]{"1"});
 ```
 
 ### Network Connection
+Android application ထဲမှာ network operations တွေလုပ်မယ်ဆိုရင် manifest ထဲမှာ permission ထည့်ရေးရမယ်
+```java
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+```
