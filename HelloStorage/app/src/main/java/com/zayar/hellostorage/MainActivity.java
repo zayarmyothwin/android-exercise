@@ -20,9 +20,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void loadInternalStorage(View view) {
+        Intent intent=new Intent(this,InternalStorageActivity.class);
+        startActivity(intent);
     }
 
     public void loadExternalStorage(View view) {
+        Intent intent=new Intent(this,ExternalStorageActivity.class);
+        startActivity(intent);
     }
 
     public void loadSqlite(View view) {
