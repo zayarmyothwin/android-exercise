@@ -447,14 +447,24 @@ Cursor cursor=db.rawQuery("SELECT * FROM "+DATA_TABLE_NAME);
 db.execSQL("DELETE FROM "+DATA_TABLE_NAME+" WHERE id=?",String[]{"1"});
 ```
 
-### Network Connection
+# Network Connection
 Android application ထဲမှာ network operations တွေလုပ်မယ်ဆိုရင် manifest ထဲမှာ permission ထည့်ရေးရမယ်
 ```java
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 ```
-#### Design Secure Network Communication
+## Design Secure Network Communication
 Application ထဲကို networking functionality တွေမထည့်ခင်မှာ data တွေ information တွေကို network ပေါ် transmit လုပ်တဲ့အခါ safe ဖစ်နေအောင်လုပ်ထားရမယ်။အဲ့လိုလုပ်ဖို့ဆိုရင် အောက်က networking security တွေကိုသိထားရမယ်
 * network ပေါ်မှာ transmit လုပ်မဲ့ sensitive ဖစ်တဲ့ data တွေနဲ့ personal user data တွေရဲ့ ပမာဏကို minimize လုပ်ထားရမယ်
 * SSL ပေါ်ကနေဘဲ app ကနေ network traffic တွေကိုပို့ရမယ်
 * Consider creating a network security configuration, which allows your app to trust custom CAs or restrict the set of system CAs that it trusts for secure communication.
+
+## HTTP POST REQUEST
+Android အတွက် community based HTTP client library တွေများစွာရှိတယ်။ Android Core ထဲမှာကိုက apache http client libray ပါဝင်တယ်။ ဒါပေမဲ့ အဲ့ဒါကို API 23 ကနေစပီးကန့်သတ်ထားလိုက်တယ်, တခြား community http client library တွေထည့်ပီးတော့သုံးမယ်ဆိုရင်တော့ရတယ်။ Android apache legacy library နဲ့ Okhttp3 library ကိုအသုံးပြုမယ်။
+
+### Legacy Http Library
+Android version 23.0 နဲ့အထပ်မှာ Legacy Http Library ကို opitional အနေနဲ့ဘဲအသုံးပြုတော့တယ်။ http library ကို setup လုပ်မယ်ဆိုရင်။
+* Method 1:App ရဲ့ android section ထဲက build.gradle ထဲမှာ useLibrary statement ကို apply လုပ်ပေးရမယ်
+```java
+code here
+```
