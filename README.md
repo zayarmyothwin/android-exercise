@@ -468,3 +468,87 @@ Android version 23.0 နဲ့အထပ်မှာ Legacy Http Library ကိ�
 ```java
 code here
 ```
+* Method 2: android sdk ရဲ့ platform-optional source အနေနဲ့ lagacy library ကို libs folder ထဲကိုထည့်ပေးရမယ်။
+```java
+image here
+```
+* Method 3:bundle ရဲ့ gradle dependency အဖစ် app level build.gradle ထဲမှာလဲထည့်ထားလို့ရတယ်။
+```java
+code here
+```
+### HTTP Post Request with apache lagacy library
+* 1.Create an object of HttpClient
+```java
+code here
+```
+* 2.Create an object of HttpPost
+```java
+code here
+```
+* 3.Add POST parameters
+```java
+code here
+```
+* 4.Encode POST data
+Http request မလုပ်ခင်မှာကိုယ့်ရဲ့ data တွေကို မှန်ကန်တဲ့ URL format အဖစ်သို့ encode လုပ်ဖို့လိုအပ်တယ်။
+```java
+code here
+```
+* 5.Finally making an HTTP POST request
+```java
+code here
+```
+### HTTP Get Request with apache lagacy library
+* 1.Create an object of HttpClient
+```java
+code here
+```
+* 2.Create an object of HttpGet
+```java
+code here
+```
+* 3.Finally make HTTP request
+```java
+code here
+```
+### Okhttp Library
+Okhttp V13 ဟာလက်ရှိမှာ java 9 and 10 နဲ့ဆို compatible မဖစ်တော့ဘူး။ Java 8 မှာတော့ app level build.gradle မှာ configure လုပ်ပေးဖို့လိုအပ်တယ်။
+```java
+code here
+```
+### Gradle's dependency for Okhttp
+Gradle dependency ကို app level build.gradle ထဲမှာထည့်ဖို့လိုအပ်တယ်။
+```java
+code here
+```
+### HTTP Post Request with Okhttp
+* 1.Create an object of OkHttpClient
+```java
+code here
+```
+* 2.Create request body object
+```java
+code here
+```
+* 3.Create Request object
+```java
+code here
+```
+* 4.Send HTTP Post request via client
+```java
+code here
+```
+### HTTP Get Request with Okhttp library
+* 1.Create an object of Okhttp client
+```java
+code here
+```
+* 2.Create an object of Request 
+```java
+code here
+```
+* 3.Send HTTP Get request via client
+```java
+code here
+```
+
