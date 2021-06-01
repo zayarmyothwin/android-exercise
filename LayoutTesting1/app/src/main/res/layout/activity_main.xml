@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+    <Button
+        android:onClick="ToLinear"
+        android:layout_marginTop="25dp"
+        android:id="@+id/btnLinear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Linear Layout"
+        android:textAllCaps="false"/>
+    <Button
+        android:onClick="ToTable"
+        android:layout_marginTop="15dp"
+        android:id="@+id/btnTable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Table Layout"
+        android:textAllCaps="false"/>
+    <Button
+        android:onClick="ToFrame"
+        android:layout_marginTop="15dp"
+        android:id="@+id/btnFrame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Frame Layout"
+        android:textAllCaps="false"/>
+    <Button
+        android:onClick="ToGrid"
+        android:layout_marginTop="15dp"
+        android:id="@+id/btnGrid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Grid Layout"
+        android:textAllCaps="false"/>
+
+
+</LinearLayout>
