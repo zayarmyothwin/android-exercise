@@ -552,3 +552,14 @@ code here
 code here
 ```
 
+# UI Layouts
+Android မှာ UI Layouts ၇ခုရှိတယ်
+* Linear Layout-vertical or horizontal အလိုက်စီပီးထားတာ
+* Relative Layout-relative positions အလိုက်ထားတာ
+* Table Layout-rows တွေ columns တွေအလိုက်ထားတာ
+* Absoulte Layout-exact location နဲ့ထားတာ(သုံးခဲတယ်)
+* Frame Layout-
+* List View-scrollable items တွေကို list နဲ့ပြတာ
+* Grid View-two dimensional နဲ့ scrollable grid တွေနဲ့ item တွေကိုပြပေးတာ
+
+Linear,Table,Frame,Grid
