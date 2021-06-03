@@ -562,4 +562,12 @@ Android မှာ UI Layouts ၇ခုရှိတယ်
 * List View-scrollable items တွေကို list နဲ့ပြတာ
 * Grid View-two dimensional နဲ့ scrollable grid တွေနဲ့ item တွေကိုပြပေးတာ
 
-Linear,Table,Frame,Grid
+## Dimension Measurement units
+* Pixels(px) - corresponds to actual pixels on the screen.
+* Inches(in) - based on the physical size of the screen.(1 Inch=2.54 centimeters)
+* Millimeters(mm) - based on the physical size of the screen.
+* Points(pt) - 1/72 of an inch based on the physical size of the screen.
+* Density-independent Pixels(dp or dip) - an abstract unit that is based on the physical density of the screen. These units are relative to a 160 dpi screenm so one dp is one pixel on a 160 dps screen.The ratio of dp-to-pixel will change with the screen density, but not necessarily in direct proportion. Note: The compiler accepts both "dip" and "dp", through "dp" is more consisten with "sp".(mostly use for image)
+* Scale-independent Pixels(sp) - this is like the dp unit, but it is also scaled by the user's font size preference. It is recommended you use this unit when specifying font sizes, so they will be adjusted for both the screen density and user's preference.(mostly use for fonts)
+
+## Building Layouts with an Adapter

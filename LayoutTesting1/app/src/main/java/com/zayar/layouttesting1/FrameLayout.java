@@ -2,6 +2,7 @@ package com.zayar.layouttesting1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
@@ -19,9 +20,16 @@ public class FrameLayout extends AppCompatActivity {
 
     public void showAlly(View view) {
         img1.setVisibility(ImageView.VISIBLE);
+        img2.setVisibility(ImageView.INVISIBLE);
     }
 
     public void showHorde(View view) {
+        img1.setVisibility(ImageView.INVISIBLE);
         img2.setVisibility(ImageView.VISIBLE);
+    }
+
+    public void backtomain(View view) {
+        Intent back=new Intent(this,MainActivity.class);
+        startActivity(back);
     }
 }
