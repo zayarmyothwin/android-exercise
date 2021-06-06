@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">ListView Activity</string>
+    <array name="fruits">
+        <item>Msi</item>
+        <item>Asus</item>
+        <item>Gigabyte</item>
+        <item>Asrock</item>
+        <item>Evga</item>
+        <item>Zotec</item>
+        <item>Colorful</item>
+        <item>Msi</item>
+        <item>Asus</item>
+        <item>Gigabyte</item>
+        <item>Asrock</item>
+        <item>Evga</item>
+        <item>Zotec</item>
+        <item>Colorful</item>
+    </array>
+</resources>

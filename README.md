@@ -571,3 +571,5 @@ Android မှာ UI Layouts ၇ခုရှိတယ်
 * Scale-independent Pixels(sp) - this is like the dp unit, but it is also scaled by the user's font size preference. It is recommended you use this unit when specifying font sizes, so they will be adjusted for both the screen density and user's preference.(mostly use for fonts)
 
 ## Building Layouts with an Adapter
+Layout အတွက် content တွေဟာ dynamic ဖစ်ပီး pre-determined မဟုတ်ဘူးဆိုရင် AdapterView ဆိုတဲ့ subclass ကိုသုံးပီး runtime မှာ layout နဲ့ view နဲ့ချိတ်ဆက်နိုင်တယ်။ AdapterView class ရဲ့ subclass ဟာ Adapter ကိုအသုံးပြုပီးတော့ layout နဲ့ data တွေကို bind ပေးတယ်။ Adapter က data source နဲ့ AdapterView layout ရဲ့ကြားခံအဖစ်ဆောင်ရွက်ပေးတယ်။ Adapter က data တွေကို (array တို့ database query )တို့ကနေ ယူပီး entry တိုင်းကို AdapterView layout အတွက် view တွေအနေနဲ့ပြောင်းပေးတယ်။
+
